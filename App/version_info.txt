@@ -1,0 +1,11 @@
+# version_info.txt
+
+[Version]
+CompanyName=FearChecker2
+FileDescription=FearChecker
+FileVersion=2.1
+InternalName=FearChecker
+LegalCopyright=\u00A9 2025 FearChecker2  # Unicode для символа ©
+OriginalFilename=FearChecker2.exe
+ProductName=FearChecker
+ProductVersion=2.1

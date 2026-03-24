@@ -1,0 +1,57 @@
+{
+  "name": "fearchecker",
+  "version": "2.0.2",
+  "description": "FearChecker - программа-помощник для проверки",
+  "author": "FEAR",
+  "main": "app-electron/main.js",
+  "scripts": {
+    "start": "chcp 65001 >nul && set ELECTRON_RUN_AS_NODE= && electron .",
+    "dev": "chcp 65001 >nul && set ELECTRON_RUN_AS_NODE= && electron . --dev",
+    "build": "electron-builder --win",
+    "pack": "electron-builder --dir"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.16"
+  },
+  "devDependencies": {
+    "electron": "28.3.3",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "ru.fearchecker.app",
+    "productName": "FearChecker",
+    "icon": "build/icon.ico",
+    "files": [
+      "dist/**/*",
+      "app-electron/**/*",
+      "App/**/*",
+      "build/icon.ico",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "build/icon.ico",
+        "to": "icon.ico"
+      }
+    ],
+    "extraFiles": [
+      {
+        "from": "App",
+        "to": "App"
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico",
+      "requestedExecutionLevel": "asInvoker"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": false,
+      "shortcutName": "FearChecker",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico"
+    }
+  }
+}
